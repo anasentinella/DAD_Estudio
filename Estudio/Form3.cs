@@ -29,7 +29,15 @@ namespace Estudio
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            int tipo = 0;
+            if (comboBox1.SelectedIndex == 0)
+                tipo = 1;
+            else if (comboBox1.SelectedIndex == 1)
+                tipo = 2;
+            if (DAO_Conexao.frmCadastrarUsuario(textBox1.Text, textBox2.Text,tipo))
+                MessageBox.Show("Cadastro realizado com sucesso");
+            else
+                MessageBox.Show("Erro de Cadastro");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

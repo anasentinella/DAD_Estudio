@@ -36,6 +36,7 @@ namespace Estudio
                 MessageBox.Show("Usuário ADM :)");
                 groupBox1.Visible = false;
                 menuStrip1.Enabled = true;
+                arquivoToolStripMenuItem.Enabled = true;
             }
             if(tipo==2)
             {
@@ -68,6 +69,11 @@ namespace Estudio
             frmCadastrarUsuario frmCadastrar_Usuario = new frmCadastrarUsuario();
             frmCadastrar_Usuario.MdiParent = this;
             frmCadastrar_Usuario.Show();
+        }
+
+        private void arquivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
