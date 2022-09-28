@@ -36,7 +36,7 @@ namespace Estudio
             setEstado(estado);
             setTelefone(telefone);
             setEmail(email);
-            setNumero(Numero);
+            setNumero(numero);
 
         }
 
