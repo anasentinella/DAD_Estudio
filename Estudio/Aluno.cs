@@ -163,7 +163,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno,nomeAluno,ruaAluno, numeroAluno,bairroAluno,complementoAluno,CEPAluno,cidadeAluno,estadoAluno,telefoneAluno)" + "values('" + CPF + "','" + Nome + "','" + Rua + "','" + Numero + "''" + Bairro + "''" + Complemento + "''" + CEP + "''" + Cidade + "''" + Estado + "''" + Telefone + "',", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno,nomeAluno,ruaAluno, numeroAluno,bairroAluno,complementoAluno,CEPAluno,cidadeAluno,estadoAluno,telefoneAluno)" + "values('" + CPF + "','" + Nome + "','" + Rua + "','" + Numero + "''" + Bairro + "''" + Complemento + "''" + CEP + "''" + Cidade + "''" + Estado + "''" + Telefone + "')", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }

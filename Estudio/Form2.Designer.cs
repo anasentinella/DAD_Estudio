@@ -54,12 +54,14 @@ namespace Estudio
             this.label1 = new System.Windows.Forms.Label();
             this.btnEscolherFoto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtComplemento);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.btnCadastrar);
             this.groupBox1.Controls.Add(this.txtEmail);
@@ -289,6 +291,13 @@ namespace Estudio
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Location = new System.Drawing.Point(424, 115);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(100, 20);
+            this.txtComplemento.TabIndex = 24;
+            // 
             // frmCadastrarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,5 +342,6 @@ namespace Estudio
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Button btnEscolherFoto;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtComplemento;
     }
 }
