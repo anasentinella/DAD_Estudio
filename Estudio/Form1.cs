@@ -75,5 +75,12 @@ namespace Estudio
         {
 
         }
+
+        private void excluirAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmExcluirAluno frmExcluir_Aluno = new frmExcluirAluno();
+            frmExcluir_Aluno.MdiParent = this;
+            frmExcluir_Aluno.Show();
+        }
     }
 }

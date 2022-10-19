@@ -59,5 +59,10 @@ namespace Estudio
         {
 
         }
+
+        private void frmCadastrarUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
