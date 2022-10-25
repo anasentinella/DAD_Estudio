@@ -75,6 +75,25 @@
     <Compile Include="form4.Designer.cs">
       <DependentUpon>form4.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarModalidade.Designer.cs">
+      <DependentUpon>FrmBuscarModalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCadastrarModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastrarModalidade.Designer.cs">
+      <DependentUpon>FrmCadastrarModalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExcluirModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExcluirModalidade.Designer.cs">
+      <DependentUpon>FrmExcluirModalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modalidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -88,6 +107,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form4.resx">
       <DependentUpon>form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarModalidade.resx">
+      <DependentUpon>FrmBuscarModalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastrarModalidade.resx">
+      <DependentUpon>FrmCadastrarModalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExcluirModalidade.resx">
+      <DependentUpon>FrmExcluirModalidade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
