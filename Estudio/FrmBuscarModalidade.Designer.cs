@@ -38,8 +38,8 @@ namespace Estudio
             this.label3 = new System.Windows.Forms.Label();
             this.txtAlunos = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.comboBoxDESC = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,7 @@ namespace Estudio
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBoxDESC);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.ttxtPreco);
             this.groupBox1.Controls.Add(this.label4);
@@ -60,7 +61,6 @@ namespace Estudio
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtAlunos);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtDescricao);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Location = new System.Drawing.Point(22, 22);
             this.groupBox1.Name = "groupBox1";
@@ -126,13 +126,6 @@ namespace Estudio
             this.label2.TabIndex = 1;
             this.label2.Text = "Descrição:";
             // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(114, 59);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(255, 20);
-            this.txtDescricao.TabIndex = 1;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Silver;
@@ -142,6 +135,14 @@ namespace Estudio
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // comboBoxDESC
+            // 
+            this.comboBoxDESC.FormattingEnabled = true;
+            this.comboBoxDESC.Location = new System.Drawing.Point(114, 58);
+            this.comboBoxDESC.Name = "comboBoxDESC";
+            this.comboBoxDESC.Size = new System.Drawing.Size(179, 21);
+            this.comboBoxDESC.TabIndex = 5;
             // 
             // FrmBuscarModalidade
             // 
@@ -171,7 +172,7 @@ namespace Estudio
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAlunos;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ComboBox comboBoxDESC;
     }
 }
