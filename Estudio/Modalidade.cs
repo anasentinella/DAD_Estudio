@@ -14,7 +14,7 @@ namespace Estudio
         private int qtdeAlunos,qtdeAulas;
         private MySqlConnection con;
 
-        public string Descricao { get => Descricao; set => Descricao = value; }
+        public string Descricao2 { get => Descricao2; set => Descricao2 = value; }
         public float Preco1 { get => Preco1; set => Preco1 = value; }
         public int QtdeAlunos { get => QtdeAlunos; set => QtdeAlunos = value; }
         public int QtdeAulas { get => qtdeAulas; set => qtdeAulas = value; }
@@ -66,11 +66,11 @@ namespace Estudio
 
         public String getDescricao()
         {
-            return Descricao;
+            return Descricao1;
         }
         private void setDescricao(string descric)
         {
-            this.Descricao = descric;
+            this.Descricao1 = descric;
         }
 
         public bool cadastrarModalidade()
@@ -80,7 +80,7 @@ namespace Estudio
             {
                 DAO_Conexao.con.Open();
                 MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade(descricaoModalidade,precoModalidade,qtdeAlunos,qtdeAulas,ativa"+
-                "values=( '" + Descricao1 + "', " + preco + ", " + qtdeAlunos + ", '" + qtdeAulas + "')", DAO_Conexao.con);
+                "values=( '" + Descricao2 + "', " + preco + ", " + qtdeAlunos + ", '" + qtdeAulas + "')", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cadi = true;
             }
