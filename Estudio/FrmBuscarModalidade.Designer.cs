@@ -31,15 +31,15 @@ namespace Estudio
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxDESC = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.ttxtPreco = new System.Windows.Forms.TextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtAulas = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAlunos = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.comboBoxDESC = new System.Windows.Forms.ComboBox();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,21 +53,30 @@ namespace Estudio
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBoxDESC);
+            this.groupBox1.Controls.Add(this.cbxDESC);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.ttxtPreco);
+            this.groupBox1.Controls.Add(this.txtPreco);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtAulas);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtAlunos);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.btnAtualizar);
             this.groupBox1.Location = new System.Drawing.Point(22, 22);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(409, 236);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidades";
+            // 
+            // cbxDESC
+            // 
+            this.cbxDESC.FormattingEnabled = true;
+            this.cbxDESC.Location = new System.Drawing.Point(114, 58);
+            this.cbxDESC.Name = "cbxDESC";
+            this.cbxDESC.Size = new System.Drawing.Size(179, 21);
+            this.cbxDESC.TabIndex = 5;
+            this.cbxDESC.SelectedIndexChanged += new System.EventHandler(this.cbxDESC_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -78,12 +87,12 @@ namespace Estudio
             this.label5.TabIndex = 4;
             this.label5.Text = "Qtde de Aulas:";
             // 
-            // ttxtPreco
+            // txtPreco
             // 
-            this.ttxtPreco.Location = new System.Drawing.Point(114, 160);
-            this.ttxtPreco.Name = "ttxtPreco";
-            this.ttxtPreco.Size = new System.Drawing.Size(100, 20);
-            this.ttxtPreco.TabIndex = 4;
+            this.txtPreco.Location = new System.Drawing.Point(114, 160);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(100, 20);
+            this.txtPreco.TabIndex = 4;
             // 
             // label4
             // 
@@ -126,23 +135,16 @@ namespace Estudio
             this.label2.TabIndex = 1;
             this.label2.Text = "Descrição:";
             // 
-            // btnBuscar
+            // btnAtualizar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Silver;
-            this.btnBuscar.Location = new System.Drawing.Point(24, 195);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(345, 23);
-            this.btnBuscar.TabIndex = 0;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // comboBoxDESC
-            // 
-            this.comboBoxDESC.FormattingEnabled = true;
-            this.comboBoxDESC.Location = new System.Drawing.Point(114, 58);
-            this.comboBoxDESC.Name = "comboBoxDESC";
-            this.comboBoxDESC.Size = new System.Drawing.Size(179, 21);
-            this.comboBoxDESC.TabIndex = 5;
+            this.btnAtualizar.BackColor = System.Drawing.Color.Silver;
+            this.btnAtualizar.Location = new System.Drawing.Point(24, 195);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(345, 23);
+            this.btnAtualizar.TabIndex = 0;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click_1);
             // 
             // FrmBuscarModalidade
             // 
@@ -154,6 +156,7 @@ namespace Estudio
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmBuscarModalidade";
             this.Text = "FrmBuscarModalidade";
+            this.Load += new System.EventHandler(this.FrmBuscarModalidade_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -166,13 +169,13 @@ namespace Estudio
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox ttxtPreco;
+        private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtAulas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAlunos;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.ComboBox comboBoxDESC;
+        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.ComboBox cbxDESC;
     }
 }

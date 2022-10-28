@@ -59,6 +59,8 @@ namespace Estudio
 
         private void cadastrarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            alunomenu.Enabled = false;
+            modalidademenu.Enabled = false;
             frmCadastrarAluno frmCadastrar_Aluno = new frmCadastrarAluno();
             frmCadastrar_Aluno.MdiParent = this;
             frmCadastrar_Aluno.Show();
@@ -66,6 +68,8 @@ namespace Estudio
 
         private void cadastrarLoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            alunomenu.Enabled = false;
+            modalidademenu.Enabled = false;
             frmCadastrarUsuario frmCadastrar_Usuario = new frmCadastrarUsuario();
             frmCadastrar_Usuario.MdiParent = this;
             frmCadastrar_Usuario.Show();
@@ -73,14 +77,50 @@ namespace Estudio
 
         private void arquivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            modalidademenu.Enabled = false;
+           alunomenu.Enabled = false;
         }
 
         private void excluirAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            alunomenu.Enabled = false;
+            modalidademenu.Enabled = false;
             frmExcluirAluno frmExcluir_Aluno = new frmExcluirAluno();
             frmExcluir_Aluno.MdiParent = this;
             frmExcluir_Aluno.Show();
+        }
+
+        private void modalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            modalidademenu.Enabled = false;
+            alunomenu.Enabled = false;
+        }
+
+        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            alunomenu.Enabled = false;
+            modalidademenu.Enabled = false;
+            FrmCadastrarModalidade frmCadastrar_modalidade = new FrmCadastrarModalidade();
+            frmCadastrar_modalidade.MdiParent = this;
+            frmCadastrar_modalidade.Show();
+        }
+
+        private void atualizarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            alunomenu.Enabled = false;
+            modalidademenu.Enabled = false;
+            FrmBuscarModalidade frmBuscar_modalidade= new FrmBuscarModalidade();
+            frmBuscar_modalidade.MdiParent = this;
+            frmBuscar_modalidade.Show();
+        }
+
+        private void excluirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            alunomenu.Enabled = false;
+            modalidademenu.Enabled = false;
+            FrmExcluirModalidade frmExcluir_modalidade = new FrmExcluirModalidade();
+            frmExcluir_modalidade.MdiParent = this;
+            frmExcluir_modalidade.Show();
         }
     }
 }

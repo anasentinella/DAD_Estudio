@@ -26,5 +26,21 @@ namespace Estudio
         {
 
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            float alunos = float.Parse(txtAlunos.Text);
+            int aulas = int.Parse(txtAulas.Text);
+            int preco = int.Parse(txtPreco.Text);
+            Modalidade mod = new Modalidade(txtDescricao.Text, alunos, aulas, preco);
+            if (mod.cadastrarModalidade())
+            {
+                MessageBox.Show("Modalidade cadastrada");
+            }
+            else
+            {
+                MessageBox.Show("Erro no Cadastro");
+            }
+        }
     }
 }

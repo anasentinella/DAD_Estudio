@@ -35,11 +35,11 @@ namespace Estudio
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.txtAlunos = new System.Windows.Forms.TextBox();
-            this.txtAulas = new System.Windows.Forms.TextBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
+            this.txtAulas = new System.Windows.Forms.TextBox();
+            this.txtAlunos = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,28 +107,12 @@ namespace Estudio
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidades";
             // 
-            // btnCadastrar
+            // txtPreco
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(24, 195);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(345, 23);
-            this.btnCadastrar.TabIndex = 0;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(114, 59);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(255, 20);
-            this.txtDescricao.TabIndex = 1;
-            // 
-            // txtAlunos
-            // 
-            this.txtAlunos.Location = new System.Drawing.Point(114, 93);
-            this.txtAlunos.Name = "txtAlunos";
-            this.txtAlunos.Size = new System.Drawing.Size(100, 20);
-            this.txtAlunos.TabIndex = 2;
+            this.txtPreco.Location = new System.Drawing.Point(114, 160);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(100, 20);
+            this.txtPreco.TabIndex = 4;
             // 
             // txtAulas
             // 
@@ -137,12 +121,29 @@ namespace Estudio
             this.txtAulas.Size = new System.Drawing.Size(100, 20);
             this.txtAulas.TabIndex = 3;
             // 
-            // txtPreco
+            // txtAlunos
             // 
-            this.txtPreco.Location = new System.Drawing.Point(114, 160);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(100, 20);
-            this.txtPreco.TabIndex = 4;
+            this.txtAlunos.Location = new System.Drawing.Point(114, 93);
+            this.txtAlunos.Name = "txtAlunos";
+            this.txtAlunos.Size = new System.Drawing.Size(100, 20);
+            this.txtAlunos.TabIndex = 2;
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(114, 59);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(255, 20);
+            this.txtDescricao.TabIndex = 1;
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Location = new System.Drawing.Point(24, 195);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(345, 23);
+            this.btnCadastrar.TabIndex = 0;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // FrmCadastrarModalidade
             // 

@@ -31,8 +31,8 @@ namespace Estudio
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,13 +57,6 @@ namespace Estudio
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidades";
             // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(89, 37);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(248, 20);
-            this.txtDescricao.TabIndex = 0;
-            // 
             // btnExcluir
             // 
             this.btnExcluir.Location = new System.Drawing.Point(27, 76);
@@ -72,6 +65,14 @@ namespace Estudio
             this.btnExcluir.TabIndex = 1;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(89, 37);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(248, 20);
+            this.txtDescricao.TabIndex = 0;
             // 
             // FrmExcluirModalidade
             // 

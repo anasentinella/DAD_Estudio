@@ -12,6 +12,7 @@ namespace Estudio
         private string Descricao1;
         private float preco;
         private int qtdeAlunos,qtdeAulas;
+        private MySqlConnection con;
 
         public string Descricao { get => Descricao; set => Descricao = value; }
         public float Preco1 { get => Preco1; set => Preco1 = value; }
@@ -118,6 +119,7 @@ namespace Estudio
             return existe;
         }
         
+       
         public bool consultarTodasModalidade()
         {
             bool existe = false;
@@ -142,10 +144,7 @@ namespace Estudio
             return existe;
         }
 
-        public bool atualizarModalidade()
-        {
-
-        }
+        
 
         public bool excluirModalidade()
         {

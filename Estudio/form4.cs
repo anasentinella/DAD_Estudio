@@ -36,5 +36,10 @@ namespace Estudio
                 }
             }
         }
+
+        private void txtCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }
