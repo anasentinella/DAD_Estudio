@@ -24,9 +24,32 @@ namespace Estudio
             {
                 if (mod.excluirModalidade())
                 {
-                    MessageBox.Show("Modalidade Excluída");
+                    MessageBox.Show("Modalidade inativa");
                 }
-            } 
+            }
+            else
+            {
+                MessageBox.Show("modalidade não encontrada");
+            }
+        }
+
+        private void txtDescricao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Modalidade mod = new Modalidade(txtDescricao.Text);
+            if (e.KeyChar == 13)
+            {
+                if (mod.consultarModalidade())
+                {
+                    if (mod.excluirModalidade())
+                    {
+                        MessageBox.Show("Modalidade inativa");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("modalidade não encontrada");
+                }
+            }
         }
     }
 }

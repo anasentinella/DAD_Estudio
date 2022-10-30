@@ -22,13 +22,14 @@ namespace Estudio
         }
         private void FrmBuscarModalidade_Load_1(object sender, EventArgs e)
         {
-            cmbdisp();
+            Busca();
         }
-        public void cmbdisp()
+        public void Busca()
         {
-            con.Open();
-            string q = "Select Estudio_Modalidade where descricaoModalidade from Estudio_Modalidade";
-            MySqlCommand cmd = new MySqlCommand(q, con);
+            
+            DAO_Conexao.con.Open();
+            string q = "Select descricaoModalidade from Estudio_Modalidade where descricaoModalidade LIKE '" + cbxDESC.Text.Trim().ToLower() + "' AND ativa = 0";
+            MySqlCommand cmd = new MySqlCommand(q, DAO_Conexao.con);
             MySqlDataReader datread = cmd.ExecuteReader();
             while (datread.Read())
             {
@@ -36,7 +37,7 @@ namespace Estudio
                 cbxDESC.DisplayMember = (datread["descricaoModalidade"].ToString());
                 cbxDESC.ValueMember = (datread["descricaoModalidade"].ToString());
             }
-            con.Close();
+            DAO_Conexao.con.Close();
         }
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
@@ -47,25 +48,26 @@ namespace Estudio
         {
             con.Open();
             string q = "Select Estudio_Modalidade where descricaoModalidade='" + cbxDESC.SelectedIndex + "'";
-            MySqlCommand cmd = new MySqlCommand(q, con);
+            MySqlCommand cmd = new MySqlCommand(q,DAO_Conexao.con);
             MySqlDataReader datread = cmd.ExecuteReader();
             while (datread.Read())
             {
                 adi = datread[0].ToString();
             }
-            con.Close();
+            DAO_Conexao.con.Close();
         }
 
         private void btnAtualizar_Click_1(object sender, EventArgs e)
         {
-            float alunos = float.Parse(txtAlunos.Text);
-            int aulas = int.Parse(txtAulas.Text);
-            int preco = int.Parse(txtPreco.Text);
-            con.Open();
-            string q = "insert into descricaoModalidade(qtdeAlunos,qtdeAulas,precoModalidade) values(" + alunos + "," + aulas + "," + preco + "," +adi+")";
-            MySqlCommand cmd = new MySqlCommand(q, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            Modalidade mod = new Modalidade(cbxDESC.Text);
+            if (string.IsNullOrWhiteSpace(cbxDESC.Text.ToString()))
+                mod.consultarTodasModalidade();
+            else
+            {
+                mod.consultarModalidade();
+            }
+            if (cbxDESC.Items.Count > 0)
+                cbxDESC.SelectedIndex = 0;
         }
     }
 }

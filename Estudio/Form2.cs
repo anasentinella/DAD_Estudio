@@ -47,5 +47,10 @@ namespace Estudio
                 }
             }
         }
+
+        private void btnEscolherFoto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

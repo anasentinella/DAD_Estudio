@@ -29,18 +29,27 @@ namespace Estudio
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            float alunos = float.Parse(txtAlunos.Text);
-            int aulas = int.Parse(txtAulas.Text);
-            int preco = int.Parse(txtPreco.Text);
-            Modalidade mod = new Modalidade(txtDescricao.Text, alunos, aulas, preco);
-            if (mod.cadastrarModalidade())
+            try
             {
-                MessageBox.Show("Modalidade cadastrada");
+                if (txtDescricao.Text.Equals(""))
+                {
+                    MessageBox.Show("Erro no Cadastro", "Alerta do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                Modalidade mod = new Modalidade(txtDescricao.Text, float.Parse(txtAlunos.Text), int.Parse(txtAulas.Text), int.Parse(txtPreco.Text));
+                if (mod.cadastrarModalidade())
+                {
+                    MessageBox.Show("Modalidade cadastrada");
+                }
+                else
+                {
+                    MessageBox.Show("Erro no Cadastro");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro no Cadastro");
+                MessageBox.Show(ex.ToString());
             }
+            
         }
     }
 }

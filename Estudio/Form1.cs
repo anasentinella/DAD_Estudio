@@ -23,7 +23,8 @@ namespace Estudio
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            txtLogin.Text = "felipe";
+            txtSenha.Text = "1708";
         }
 
         private void btnLogar_Click(object sender, EventArgs e)

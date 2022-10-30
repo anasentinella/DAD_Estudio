@@ -9,26 +9,28 @@ namespace Estudio
 {
     class Modalidade
     {
-        private string Descricao1;
-        private float preco;
-        private int qtdeAlunos,qtdeAulas;
         private MySqlConnection con;
+        
 
-        public string Descricao2 { get => Descricao2; set => Descricao2 = value; }
+        public string Descricao1 { get => Descricao1; set => Descricao1 = value; }
         public float Preco1 { get => Preco1; set => Preco1 = value; }
         public int QtdeAlunos { get => QtdeAlunos; set => QtdeAlunos = value; }
-        public int QtdeAulas { get => qtdeAulas; set => qtdeAulas = value; }
+        public int QtdeAulas { get => QtdeAulas; set => QtdeAulas = value; }
+        public int Id { get => Id; set => Id = value; }
 
-       public Modalidade(string Descricao1, float preco, int qtde_alunos,int qtde_aulas){
+        public Modalidade(string Descricao1, float preco, int qtde_alunos,int qtde_aulas){
             DAO_Conexao.getConexao("143.106.241.3", "cl201281", "cl201281", "cl*15022006");
             setDescricao(Descricao1);
             setPreco1(preco);
             setQtdeAlunos(qtde_alunos);
             setQtdeAulas(qtde_aulas);
         }
-        public Modalidade(string Descric)
+
+        
+
+        public Modalidade(string Descricao1)
         {
-            setDescricao(Descric);
+            setDescricao(Descricao1);
         }
 
 
@@ -38,33 +40,41 @@ namespace Estudio
 
         }
 
+        public int getId()
+        {
+            return Id;
+        }
+        private void setId(int id)
+        {
+            this.Id = id;
+        }
         public int getQtdeAulas()
         {
-            return qtdeAulas;
+            return QtdeAulas;
         }
 
         private void setQtdeAulas(int qtde_aulas)
         {
-            this.qtdeAulas= qtde_aulas;
+            this.QtdeAulas = qtde_aulas;
         }
         public int getQtdeAlunos()
         {
-            return qtdeAlunos;
+            return QtdeAlunos;
         }
         private void setQtdeAlunos(int qtde_alunos)
         {
-            this.qtdeAlunos = qtde_alunos;
+            this.QtdeAlunos = qtde_alunos;
         }
         public float getPreco()
         {
-            return preco;
+            return Preco1;
         }
         private void setPreco1(float preco)
         {
-            this.preco = preco;
+            this.Preco1 = preco;
         }
 
-        public String getDescricao()
+        public string getDescricao()
         {
             return Descricao1;
         }
@@ -79,8 +89,8 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade(descricaoModalidade,precoModalidade,qtdeAlunos,qtdeAulas,ativa"+
-                "values=( '" + Descricao2 + "', " + preco + ", " + qtdeAlunos + ", '" + qtdeAulas + "')", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade(descricaoModalidade,precoModalidade,qtdeAlunos,qtdeAulas,ativa" +
+                "values=( '" + Descricao1 + "', " + Preco1 + ", " + QtdeAlunos + ", '" + QtdeAulas + "')", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cadi = true;
             }
@@ -165,19 +175,6 @@ namespace Estudio
             }
             return exc;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 
