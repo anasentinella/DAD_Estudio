@@ -158,7 +158,32 @@ namespace Estudio
             return existe;
         }
 
-        
+        public void AtualizarModalidade()
+        {
+            bool checkUpdate = false;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                StringBuilder sbQuery = new StringBuilder()
+                    .Append("update Estudio_Modalidade set precoModalidade='" + Preco + "',")
+                    .Append(" set qtdAlunos='" + qtde_alunos + "',")
+                    .Append(" set qtdAulas='" + qtde_aulas + "'")
+                    .Append(" where descricaoModalidade='" + Descricao + "'");
+
+                MySqlCommand atualizarQuery = new MySqlCommand(sbQuery.ToString(), DAO_Conexao.con);
+                atualizarQuery.ExecuteNonQuery();
+                checkUpdate = true;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Erro ao atualizar modalidade... " + Descricao + "\n" + ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+        }
 
         public bool excluirModalidade()
         {
@@ -172,7 +197,7 @@ namespace Estudio
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Ocorreu um erro ao excluir modalidade: " + Descricao + "\n" + ex.ToString());
 
             }
             finally

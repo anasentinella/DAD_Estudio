@@ -76,7 +76,6 @@ namespace Estudio
             this.cbxDESC.Name = "cbxDESC";
             this.cbxDESC.Size = new System.Drawing.Size(179, 21);
             this.cbxDESC.TabIndex = 5;
-            this.cbxDESC.SelectedIndexChanged += new System.EventHandler(this.cbxDESC_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -156,6 +155,7 @@ namespace Estudio
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmBuscarModalidade";
             this.Text = "FrmBuscarModalidade";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmBuscarModalidade_FormClosed);
             this.Load += new System.EventHandler(this.FrmBuscarModalidade_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
