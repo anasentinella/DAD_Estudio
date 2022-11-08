@@ -93,8 +93,8 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade(descricaoModalidade,precoModalidade,qtdeAlunos,qtdeAulas,ativa" +
-                "values=( '" + Descricao1 + "', " + Preco1 + ", " + QtdeAlunos + ", '" + QtdeAulas + "')", DAO_Conexao.con);
+                Console.WriteLine("insert into Estudio_Modalidade(descricaoModalidade,precoModalidade,qtdeAlunos,qtdeAulas) values ('" + Descricao + "', '" + Preco + "', " + qtde_alunos + ", " + qtde_aulas + ")");
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade(descricaoModalidade,precoModalidade,qtdeAlunos,qtdeAulas) values ('" + Descricao + "', '" + Preco + "', " + qtde_alunos + ", " + qtde_aulas + ")", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cadi = true;
             }
@@ -115,7 +115,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("Select * From Estudio_Modalidade" + " WHERE descricaoModalidade='" + Descricao1 + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("Select * From Estudio_Modalidade" + " WHERE descricaoModalidade='" + Descricao + "'", DAO_Conexao.con);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
@@ -140,7 +140,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("Select * From Estudio_Modalidade", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("Select * From Estudio_Modalidade WHERE ativa=0 ORDER BY descricaoModalidade", DAO_Conexao.con);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
@@ -165,13 +165,15 @@ namespace Estudio
             bool exc = false;
             try
             {
-                MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidade se ativo" + "= 1 where descricaoModalidade ='" + Descricao1 + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidade set ativa" + "= 1 where descricaoModalidade ='" + Descricao + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
+               
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+
             }
             finally
             {

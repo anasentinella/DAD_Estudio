@@ -33,7 +33,7 @@ namespace Estudio
             {
                 if (txtDescricao.Text.Equals(""))
                 {
-                    MessageBox.Show("Erro no Cadastro", "Alerta do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("cadastro realizado com sucesso", "Alerta do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 Modalidade mod = new Modalidade(txtDescricao.Text, float.Parse(txtAlunos.Text), int.Parse(txtAulas.Text), int.Parse(txtPreco.Text));
                 if (mod.cadastrarModalidade())
