@@ -91,3 +91,6 @@ C:\pastarepositorios\DAD_Estudio\Estudio\bin\Debug\Renci.SshNet.dll
 C:\pastarepositorios\DAD_Estudio\Estudio\bin\Debug\BouncyCastle.Crypto.dll
 C:\pastarepositorios\DAD_Estudio\Estudio\bin\Debug\MySql.Data.xml
 C:\pastarepositorios\DAD_Estudio\Estudio\obj\Debug\Estudio.csproj.CopyComplete
+C:\Users\aluno\Desktop\DAD_Estudio\Estudio\obj\Debug\Estudio.FrmBuscarModalidade.resources
+C:\Users\aluno\Desktop\DAD_Estudio\Estudio\obj\Debug\Estudio.FrmCadastrarModalidade.resources
+C:\Users\aluno\Desktop\DAD_Estudio\Estudio\obj\Debug\Estudio.FrmExcluirModalidade.resources

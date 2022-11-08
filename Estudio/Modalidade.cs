@@ -10,12 +10,16 @@ namespace Estudio
     class Modalidade
     {
         private MySqlConnection con;
+
+        private String Descricao;
+        private float Preco;
+        private int qtde_alunos, qtde_aulas;
         
 
-        public string Descricao1 { get => Descricao1; set => Descricao1 = value; }
-        public float Preco1 { get => Preco1; set => Preco1 = value; }
-        public int QtdeAlunos { get => QtdeAlunos; set => QtdeAlunos = value; }
-        public int QtdeAulas { get => QtdeAulas; set => QtdeAulas = value; }
+        public string Descricao1 { get => Descricao; set => Descricao = value; }
+        public float Preco1 { get => Preco; set => Preco = value; }
+        public int QtdeAlunos { get => qtde_alunos; set => qtde_alunos = value; }
+        public int QtdeAulas { get => qtde_aulas; set => qtde_aulas = value; }
         public int Id { get => Id; set => Id = value; }
 
         public Modalidade(string Descricao1, float preco, int qtde_alunos,int qtde_aulas){

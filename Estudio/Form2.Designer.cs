@@ -290,7 +290,6 @@ namespace Estudio
             this.btnEscolherFoto.TabIndex = 23;
             this.btnEscolherFoto.Text = "Escolher foto";
             this.btnEscolherFoto.UseVisualStyleBackColor = true;
-            this.btnEscolherFoto.Click += new System.EventHandler(this.btnEscolherFoto_Click);
             // 
             // pictureBox1
             // 
