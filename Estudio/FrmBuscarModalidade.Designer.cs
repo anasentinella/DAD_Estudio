@@ -76,6 +76,7 @@ namespace Estudio
             this.cbxDESC.Name = "cbxDESC";
             this.cbxDESC.Size = new System.Drawing.Size(179, 21);
             this.cbxDESC.TabIndex = 5;
+            this.cbxDESC.SelectedIndexChanged += new System.EventHandler(this.cbxDESC_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -143,7 +144,7 @@ namespace Estudio
             this.btnAtualizar.TabIndex = 0;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click_1);
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // FrmBuscarModalidade
             // 

@@ -16,6 +16,7 @@ namespace Estudio
         public FrmExcluirModalidade()
         {
             InitializeComponent();
+            this.Text = "Excluir Modalidade";
         }
 
        
@@ -28,31 +29,47 @@ namespace Estudio
         }
         public void populatecbxDESC()
         {
-            DAO_Conexao.con.Open();
-            MySqlCommand selectDesc = new MySqlCommand("Select descricaoModalidade from Estudio_Modalidade where ativa=1", DAO_Conexao.con);
-            MySqlDataReader res = selectDesc.ExecuteReader();
-            cbxDESC.Items.Clear();
-            while (res.Read())
+            try
             {
-                cbxDESC.Items.Add(res.GetString("descricaoModalidade"));
-                cbxDESC.Text = res[0].ToString();
+                DAO_Conexao.con.Open();
+                string sql = "SELECT  descricaoModalidade, precoModalidade, qtdeAlunos, qtdeAulas from Estudio_Modalidade where ativa =0 ";
+                MySqlCommand adiciona = new MySqlCommand(sql, DAO_Conexao.con);
+                MySqlDataReader datared = adiciona.ExecuteReader();
+                while (datared.Read())
+                {
+                    cbxDESC.Items.Add(datared["descricaoModalidade"].ToString());
+                    cbxDESC.DisplayMember = (datared["descricaoModalidade"].ToString());
+                    cbxDESC.ValueMember = (datared["descricaoModalidade"].ToString());
+                }
             }
-            DAO_Conexao.con.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
         }
-        private void btnExcluir_Click(object sender, EventArgs e)
+        
+
+        private void btnExcluir_Click_1(object sender, EventArgs e)
         {
-            Modalidade mod = new Modalidade(cbxDESC.SelectedItem.ToString());
+            Modalidade mod = new Modalidade(cbxDESC.Text);
             if (mod.excluirModalidade())
             {
+                
                 MessageBox.Show("Modalidade inativa!");
+                cbxDESC.Items.Clear();
+                populatecbxDESC();
             }
             else
             {
                 MessageBox.Show("impossivel excluir modalidade...");
+            
             }
-            populatecbxDESC();
+         
         }
-
-       
     }
 }
+

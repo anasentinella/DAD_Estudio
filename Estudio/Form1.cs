@@ -149,5 +149,18 @@ namespace Estudio
         {
 
         }
+
+        private void consultarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmCadastrarAluno>().Count() == 0)
+            {
+                int a = 0;
+                alunomenu.Enabled = false;
+                modalidademenu.Enabled = false;
+                FrmBuscarModalidade frmBuscar_modalidade = new FrmBuscarModalidade(a);
+                frmBuscar_modalidade.MdiParent = this;
+                frmBuscar_modalidade.Show();
+            }
+        }
     }
 }

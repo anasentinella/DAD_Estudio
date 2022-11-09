@@ -31,8 +31,8 @@ namespace Estudio
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.cbxDESC = new System.Windows.Forms.ComboBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,14 @@ namespace Estudio
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidades";
             // 
+            // cbxDESC
+            // 
+            this.cbxDESC.FormattingEnabled = true;
+            this.cbxDESC.Location = new System.Drawing.Point(88, 34);
+            this.cbxDESC.Name = "cbxDESC";
+            this.cbxDESC.Size = new System.Drawing.Size(197, 21);
+            this.cbxDESC.TabIndex = 2;
+            // 
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -67,14 +75,7 @@ namespace Estudio
             this.btnExcluir.TabIndex = 1;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // cbxDESC
-            // 
-            this.cbxDESC.FormattingEnabled = true;
-            this.cbxDESC.Location = new System.Drawing.Point(88, 34);
-            this.cbxDESC.Name = "cbxDESC";
-            this.cbxDESC.Size = new System.Drawing.Size(197, 21);
-            this.cbxDESC.TabIndex = 2;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
             // 
             // FrmExcluirModalidade
             // 

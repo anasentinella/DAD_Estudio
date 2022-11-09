@@ -114,6 +114,7 @@ namespace Estudio
             bool existe = false;
             try
             {
+                Console.WriteLine("Select * From Estudio_Modalidade" + " WHERE descricaoModalidade='" + Descricao + "'", DAO_Conexao.con);
                 DAO_Conexao.con.Open();
                 MySqlCommand consulta = new MySqlCommand("Select * From Estudio_Modalidade" + " WHERE descricaoModalidade='" + Descricao + "'", DAO_Conexao.con);
                 MySqlDataReader resultado = consulta.ExecuteReader();
@@ -133,21 +134,20 @@ namespace Estudio
             return existe;
         }
         
-       
-        public bool consultarTodasModalidade()
+
+        public bool AtualizarModalidade()
         {
-            bool existe = false;
+            bool checkUpdate = false;
+
             try
             {
+   
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("Select * From Estudio_Modalidade WHERE ativa=0 ORDER BY descricaoModalidade", DAO_Conexao.con);
-                MySqlDataReader resultado = consulta.ExecuteReader();
-                if (resultado.Read())
-                {
-                    existe = true;
-                }
+                MySqlCommand atua = new MySqlCommand("UPDATE Estudio_Modalidade SET precoModalidade =" + Preco + ", qtdeAlunos =" + qtde_alunos + ", qtdeAulas = " + qtde_aulas + " WHERE descricaoModalidade like '" + Descricao + "'", DAO_Conexao.con);
+                atua.ExecuteNonQuery();
+                checkUpdate = true;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 Console.WriteLine(ex.ToString());
             }
@@ -155,34 +155,7 @@ namespace Estudio
             {
                 DAO_Conexao.con.Close();
             }
-            return existe;
-        }
-
-        public void AtualizarModalidade()
-        {
-            bool checkUpdate = false;
-
-            try
-            {
-                DAO_Conexao.con.Open();
-                StringBuilder sbQuery = new StringBuilder()
-                    .Append("update Estudio_Modalidade set precoModalidade='" + Preco + "',")
-                    .Append(" set qtdAlunos='" + qtde_alunos + "',")
-                    .Append(" set qtdAulas='" + qtde_aulas + "'")
-                    .Append(" where descricaoModalidade='" + Descricao + "'");
-
-                MySqlCommand atualizarQuery = new MySqlCommand(sbQuery.ToString(), DAO_Conexao.con);
-                atualizarQuery.ExecuteNonQuery();
-                checkUpdate = true;
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Erro ao atualizar modalidade... " + Descricao + "\n" + ex.ToString());
-            }
-            finally
-            {
-                DAO_Conexao.con.Close();
-            }
+            return checkUpdate;
         }
 
         public bool excluirModalidade()
@@ -190,7 +163,8 @@ namespace Estudio
             bool exc = false;
             try
             {
-                MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidade set ativa" + "= 1 where descricaoModalidade ='" + Descricao + "'", DAO_Conexao.con);
+                DAO_Conexao.con.Open();
+                MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidade set ativa" + "= 1 where descricaoModalidade like '" + Descricao + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
                

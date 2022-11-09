@@ -15,6 +15,7 @@ namespace Estudio
         public FrmCadastrarModalidade()
         {
             InitializeComponent();
+            this.Text = "Cadastrar Modalidade";
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -50,6 +51,11 @@ namespace Estudio
                 MessageBox.Show(ex.ToString());
             }
             
+        }
+
+        private void txtDescricao_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
