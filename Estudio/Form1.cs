@@ -64,6 +64,7 @@ namespace Estudio
             {
                 alunomenu.Enabled = false;
                 modalidademenu.Enabled = false;
+                TurmaMenu.Enabled = false;
                 frmCadastrarAluno frmCadastrar_Aluno = new frmCadastrarAluno();
                 frmCadastrar_Aluno.MdiParent = this;
                 frmCadastrar_Aluno.Show();
@@ -76,6 +77,7 @@ namespace Estudio
             {
                 alunomenu.Enabled = false;
                 modalidademenu.Enabled = false;
+                TurmaMenu.Enabled = false;
                 frmCadastrarUsuario frmCadastrar_Usuario = new frmCadastrarUsuario();
                 frmCadastrar_Usuario.MdiParent = this;
                 frmCadastrar_Usuario.Show();
@@ -86,6 +88,7 @@ namespace Estudio
         {
             modalidademenu.Enabled = false;
            alunomenu.Enabled = false;
+            TurmaMenu.Enabled = false;
         }
 
         private void excluirAlunoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,6 +97,7 @@ namespace Estudio
             {
                 alunomenu.Enabled = false;
                 modalidademenu.Enabled = false;
+                TurmaMenu.Enabled = false;
                 frmExcluirAluno frmExcluir_Aluno = new frmExcluirAluno();
                 frmExcluir_Aluno.MdiParent = this;
                 frmExcluir_Aluno.Show();
@@ -105,6 +109,8 @@ namespace Estudio
         {
             modalidademenu.Enabled = false;
             alunomenu.Enabled = false;
+            TurmaMenu.Enabled = false;
+
         }
 
         private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -113,6 +119,7 @@ namespace Estudio
             {
                 alunomenu.Enabled = false;
                 modalidademenu.Enabled = false;
+                TurmaMenu.Enabled = false;
                 FrmCadastrarModalidade frmCadastrar_modalidade = new FrmCadastrarModalidade();
                 frmCadastrar_modalidade.MdiParent = this;
                 frmCadastrar_modalidade.Show();
@@ -126,6 +133,7 @@ namespace Estudio
             {
                 alunomenu.Enabled = false;
                 modalidademenu.Enabled = false;
+                TurmaMenu.Enabled = false;
                 FrmBuscarModalidade frmBuscar_modalidade = new FrmBuscarModalidade();
                 frmBuscar_modalidade.MdiParent = this;
                 frmBuscar_modalidade.Show();
@@ -139,6 +147,7 @@ namespace Estudio
             {
                 alunomenu.Enabled = false;
                 modalidademenu.Enabled = false;
+                TurmaMenu.Enabled = false;
                 FrmExcluirModalidade frmExcluir_modalidade = new FrmExcluirModalidade();
                 frmExcluir_modalidade.MdiParent = this;
                 frmExcluir_modalidade.Show();
@@ -147,7 +156,9 @@ namespace Estudio
 
         private void alunomenu_Click(object sender, EventArgs e)
         {
-
+            alunomenu.Enabled = false;
+            modalidademenu.Enabled = false;
+            TurmaMenu.Enabled = false;
         }
 
         private void consultarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,6 +168,47 @@ namespace Estudio
                 int a = 0;
                 alunomenu.Enabled = false;
                 modalidademenu.Enabled = false;
+                TurmaMenu.Enabled = false;
+                FrmBuscarModalidade frmBuscar_modalidade = new FrmBuscarModalidade(a);
+                frmBuscar_modalidade.MdiParent = this;
+                frmBuscar_modalidade.Show();
+            }
+        }
+
+        private void cadastrarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmCadastrarAluno>().Count() == 0)
+            {
+                alunomenu.Enabled = false;
+                modalidademenu.Enabled = false;
+                TurmaMenu.Enabled = false;
+                FormCadastrarTurma frmCadastrarTurma = new FormCadastrarTurma();
+                frmCadastrarTurma.MdiParent = this;
+                frmCadastrarTurma.Show();
+            }
+        }
+
+        private void excluirTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmCadastrarAluno>().Count() == 0)
+            {
+                alunomenu.Enabled = false;
+                modalidademenu.Enabled = false;
+                TurmaMenu.Enabled = false;
+                FormCadastrarTurma frmCadastrarTurma = new FormCadastrarTurma();
+                frmCadastrarTurma.MdiParent = this;
+                frmCadastrarTurma.Show();
+            }
+        }
+
+        private void consultarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmCadastrarAluno>().Count() == 0)
+            {
+                int a = 0;
+                alunomenu.Enabled = false;
+                modalidademenu.Enabled = false;
+                TurmaMenu.Enabled = false;
                 FrmBuscarModalidade frmBuscar_modalidade = new FrmBuscarModalidade(a);
                 frmBuscar_modalidade.MdiParent = this;
                 frmBuscar_modalidade.Show();
