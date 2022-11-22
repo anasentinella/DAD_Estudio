@@ -195,24 +195,12 @@ namespace Estudio
                 alunomenu.Enabled = false;
                 modalidademenu.Enabled = false;
                 TurmaMenu.Enabled = false;
-                FormCadastrarTurma frmCadastrarTurma = new FormCadastrarTurma();
-                frmCadastrarTurma.MdiParent = this;
-                frmCadastrarTurma.Show();
+                FormExcluirTurma frmExcluirTurma = new FormExcluirTurma();
+                frmExcluirTurma.MdiParent = this;
+                frmExcluirTurma.Show();
             }
         }
 
-        private void consultarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Application.OpenForms.OfType<frmCadastrarAluno>().Count() == 0)
-            {
-                int a = 0;
-                alunomenu.Enabled = false;
-                modalidademenu.Enabled = false;
-                TurmaMenu.Enabled = false;
-                FrmBuscarModalidade frmBuscar_modalidade = new FrmBuscarModalidade(a);
-                frmBuscar_modalidade.MdiParent = this;
-                frmBuscar_modalidade.Show();
-            }
-        }
+        
     }
 }

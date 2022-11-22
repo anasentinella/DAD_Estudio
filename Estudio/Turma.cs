@@ -109,9 +109,6 @@ namespace Estudio
             return existe;
         }
 
-        public MySqlDataReader ConsultarTurma01()
-        {
-
-        }
+        
     }
 }

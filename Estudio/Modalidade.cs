@@ -134,7 +134,22 @@ namespace Estudio
             return existe;
         }
         
-
+        public MySqlDataReader consultarTodasModalidades()
+        {
+            MySqlDataReader re = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consultar = new MySqlCommand("Select * From Estudio_Modalidade where ativa=0 ORDER BY descricaoModalidade", DAO_Conexao.con);
+                    re = consultar.ExecuteReader();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                DAO_Conexao.con.Close();
+            }
+            return re;
+        }
         public bool AtualizarModalidade()
         {
             bool checkUpdate = false;
