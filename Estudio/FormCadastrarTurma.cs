@@ -28,7 +28,7 @@ namespace Estudio
             MySqlDataReader re = m.consultarTodasModalidades();
             while (re.Read())
             {
-                dataGridView1.Rows.Add(re["descricaoModalidade"].ToString());
+                cbxModalidade.Items.Add(re["descricaoModalidade"].ToString());
             }
             DAO_Conexao.con.Close();
         }
@@ -48,8 +48,9 @@ namespace Estudio
             }
             else
             {
-                Turma tu = new Turma(txtModalidade.Text, txtProfessor.Text, txtSemana.Text,txtHora.Text);
-                if (tu.CadastrarTurma())
+                Modalidade m = new Modalidade(cbxModalidade.Text);
+                Turma tur = new Turma(m.buscaporId(),txtProfessor.Text, txtSemana.Text, maskedtxtHora.Text);
+                if (tur.CadastrarTurma())
                 {
                     MessageBox.Show("Cadastro feito com sucesso");
                 }
@@ -57,6 +58,22 @@ namespace Estudio
                 {
                     MessageBox.Show("Erro de cadastro!");
                 }
+            }
+        }
+
+        
+
+        private void cbxModalidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Modalidade m = new Modalidade(cbxModalidade.Text);
+            int a = m.buscaporId();
+            if (a == -1)
+            {
+                MessageBox.Show("Erro interno,ID não encontrado");
+            }
+            else
+            {
+                id = a;
             }
         }
     }

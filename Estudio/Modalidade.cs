@@ -22,7 +22,7 @@ namespace Estudio
         public int QtdeAulas { get => qtde_aulas; set => qtde_aulas = value; }
         public int Id { get => Id; set => Id = value; }
 
-        public Modalidade(string Descricao1, float preco, int qtde_alunos, int qtde_aulas)
+        public Modalidade(string Descricao1, int qtde_alunos,int qtde_aulas, float preco)
         {
             DAO_Conexao.getConexao("143.106.241.3", "cl201281", "cl201281", "cl*15022006");
             setDescricao(Descricao1);

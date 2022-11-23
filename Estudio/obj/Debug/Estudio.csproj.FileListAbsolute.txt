@@ -140,3 +140,5 @@ C:\Users\aluno\Music\DAD_Estudio\Estudio\bin\Debug\MySql.Data.xml
 C:\Users\aluno\Music\DAD_Estudio\Estudio\obj\Debug\Estudio.csproj.CopyComplete
 C:\Users\aluno\Music\DAD_Estudio\Estudio\obj\Debug\Estudio.exe
 C:\Users\aluno\Music\DAD_Estudio\Estudio\obj\Debug\Estudio.pdb
+C:\Users\aluno\Desktop\DAD_Estudio\Estudio\obj\Debug\Estudio.FormCadastrarTurma.resources
+C:\Users\aluno\Desktop\DAD_Estudio\Estudio\obj\Debug\Estudio.FormExcluirTurma.resources

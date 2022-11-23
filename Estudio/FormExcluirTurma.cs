@@ -31,24 +31,7 @@ namespace Estudio
             }
             DAO_Conexao.con.Close();
         }
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            Modalidade m = new Modalidade(cbxModalidade.Text);
-            Turma t = new Turma(m.buscaporId(), cbxDiaSemana.Text, cbxHora.Text);
-            if (t.ExcluirTurma())
-            {
-                MessageBox.Show("Exclusão realizada com sucesso");
-                cbxModalidade.Items.Clear();
-                cbxModalidade.Text = String.Empty;
-                cbxDiaSemana.Items.Clear();
-                cbxDiaSemana.Text = String.Empty;
-                cbxHora.Items.Clear();
-                cbxHora.Text = String.Empty;
-                carregaComboBox();
-            }
-            else
-                MessageBox.Show("Erro de exclusão!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
+       
 
         private void cbxDiaSemana_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -57,9 +40,10 @@ namespace Estudio
             Modalidade m = new Modalidade(cbxModalidade.Text);
             Turma t = new Turma(m.buscaporId(), cbxDiaSemana.Text);
             MySqlDataReader re = t.buscaTurmaGeral();
+
             while (re.Read())
             {
-                cbxHora.Items.Add(re["Hora"]);
+              cbxHora.Items.Add(re["Hora"].ToString());
             }
             DAO_Conexao.con.Close();
         }
@@ -72,7 +56,31 @@ namespace Estudio
             cbxDiaSemana.Text = String.Empty;
             Modalidade m = new Modalidade(cbxModalidade.Text);
             Turma t = new Turma(m.buscaporId());
-            MySqlDataReader re = t.buscaTurma1();
+            MySqlDataReader re = t.buscaTurma();
+            while(re.Read())
+            {
+                cbxDiaSemana.Items.Add(re["diaSemana"].ToString());
+            }
+            DAO_Conexao.con.Close();
         }
-    }      
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Modalidade m = new Modalidade(cbxModalidade.Text);
+            Turma t = new Turma(m.buscaporId(), cbxDiaSemana.Text, cbxHora.Text);
+            if (t.ExcluirTurma())
+            {
+                MessageBox.Show("Exclusão realizada com sucesso");
+                cbxModalidade.Items.Clear();
+                cbxDiaSemana.Items.Clear();
+                cbxHora.Items.Clear();
+                cbxModalidade.Text = String.Empty;
+                cbxDiaSemana.Text = String.Empty;
+                cbxHora.Text = String.Empty;
+                
+                carregaComboBox();
+            }
+            else
+                MessageBox.Show("Erro de exclusão");
+        }
+    }   
 }

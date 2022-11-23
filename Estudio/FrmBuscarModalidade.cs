@@ -35,7 +35,7 @@ namespace Estudio
         private void FrmBuscarModalidade_Load_1(object sender, EventArgs e)
         {
             DAO_Conexao.con.Open();
-            string sql = "SELECT  descricaoModalidade, precoModalidade, qtdeAlunos, qtdeAulas from Estudio_Modalidade where ativa =0 ";
+            string sql = "SELECT  descricaoModalidade, qtdeAlunos, qtdeAulas, precoModalidade from Estudio_Modalidade where ativa =0 ";
             MySqlCommand adiciona = new MySqlCommand(sql, DAO_Conexao.con);
             MySqlDataReader datared = adiciona.ExecuteReader();
             while (datared.Read())
@@ -77,13 +77,12 @@ namespace Estudio
             }
             finally{
                 DAO_Conexao.con.Close();
-            }
-           
+            }          
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            Modalidade mod = new Modalidade(cbxDESC.Text, float.Parse(txtPreco.Text), int.Parse(txtAlunos.Text), int.Parse(txtAulas.Text));
+            Modalidade mod = new Modalidade(cbxDESC.Text,int.Parse(txtAlunos.Text), int.Parse(txtAulas.Text),float.Parse(txtPreco.Text));
             if (mod.AtualizarModalidade())
                 MessageBox.Show("Modalidade atualizada com sucesso");
             else

@@ -9,36 +9,50 @@ namespace Estudio
 {
     class Turma
     {
-        private string professor, dia_semana, hora;
+        private string professor, dia_semana;
+        string hora;
         private int modalidade;
-        private string text;
 
-        public Turma(int modalidade)
-        {
-            this.modalidade = modalidade;
-        }
-        public Turma(int modalidade, string dia_semana)
-        {
-            this.modalidade = modalidade;
-            this.dia_semana = dia_semana;
-        }
-
-        public Turma(string professor, string dia_semana, string hora, int modalidade)
+        public Turma(string professor, string dia_semana, string hora)
         {
             this.professor = professor;
             this.dia_semana = dia_semana;
             this.hora = hora;
-            this.modalidade = modalidade;
+           
           
         }
-
-       
+        public Turma(int idmodalidade,string diaSemana, string hora)
+        {
+            this.modalidade = idmodalidade;
+         
+            this.dia_semana = diaSemana;
+            this.hora = hora;
+        }
+        public Turma(int idmodalidade, string Professor, string diaSemana, string hora)
+        {
+            this.modalidade = idmodalidade;
+            this.professor = Professor;
+            this.dia_semana = diaSemana;
+            this.hora = hora;
+        }
+        public Turma(int idmodalidade, string diaSemana)
+        {
+            this.modalidade = idmodalidade;
+            this.dia_semana = diaSemana;
+        }
+        public Turma(int idmodalidade)
+        {
+            this.modalidade = idmodalidade;
+        }
 
         public string Professor { get => professor; set => professor = value; }
         public string Dia_semana { get => dia_semana; set => dia_semana = value; }
         public string Hora { get => hora; set => hora = value; }
         public int Modalidade { get => modalidade; set => modalidade = value; }
-   
+        public int V { get; }
+        public string Text1 { get; }
+        public string Text2 { get; }
+        public string Text3 { get; }
 
         public bool CadastrarTurma()
         {
@@ -46,9 +60,9 @@ namespace Estudio
         try
         {
             DAO_Conexao.con.Open();
-            Console.WriteLine("insert into Estudio_Turma(Professor,DiaSemanaHora,Hora) values ('" + Professor + "','" + dia_semana + "','" + Hora + "')", DAO_Conexao.con);
-            MySqlCommand insere = new MySqlCommand("insert into Estudio_Turma(Professor,DiaSemanaHora,Hora) values ('" + Professor + "','" + dia_semana + "','" + Hora + "')", DAO_Conexao.con);
-            insere.ExecuteNonQuery();
+            Console.WriteLine("insert into Estudio_Turma(idModalidade,Professor,DiaSemana,Hora) values ("+modalidade +",'" + Professor + "','" + dia_semana + "','" + Hora + "')", DAO_Conexao.con);
+            MySqlCommand insere = new MySqlCommand("insert into Estudio_Turma(idModalidade,Professor,DiaSemana,Hora) values (" + modalidade + ",'" + Professor + "','" + dia_semana + "','" + Hora + "')", DAO_Conexao.con);
+                insere.ExecuteNonQuery();
             cadi = true;
         }
         catch (Exception ex)
@@ -70,14 +84,14 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("Delete Estudio_Turma  1 where idModalidade like '" + Modalidade + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("Delete FROM Estudio_Turma where idModalidade=" + Modalidade + " AND DiaSemana like '"+ dia_semana+ "' And Hora like '"+ hora +"'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
                
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ocorreu um erro ao excluir turma: " + Modalidade + "\n" + ex.ToString());
+                Console.WriteLine(ex.ToString());
 
             }
             finally
@@ -113,7 +127,7 @@ namespace Estudio
             return existe;
         }
 
-        public MySqlDataReader buscaTurma1()
+        public MySqlDataReader buscaTurma()
         {
             MySqlDataReader res = null;
 
@@ -130,6 +144,8 @@ namespace Estudio
             }
             return res;
         }
+       
+
         public MySqlDataReader buscaTurmaGeral()
         {
             MySqlDataReader res = null;
@@ -137,7 +153,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE id_modalidade=" + modalidade + " AND Dia_semana like '" + dia_semana + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE idModalidade=" + modalidade + " AND DiaSemana like '" + dia_semana + "'", DAO_Conexao.con);
                 res = consulta.ExecuteReader();
             }
             catch (Exception ex)
@@ -147,5 +163,6 @@ namespace Estudio
             }
             return res;
         }
+
     }
 }

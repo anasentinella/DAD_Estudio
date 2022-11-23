@@ -30,28 +30,25 @@ namespace Estudio
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxModalidade = new System.Windows.Forms.ComboBox();
+            this.maskedtxtHora = new System.Windows.Forms.MaskedTextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.txtHora = new System.Windows.Forms.TextBox();
             this.txtSemana = new System.Windows.Forms.TextBox();
             this.txtProfessor = new System.Windows.Forms.TextBox();
-            this.txtModalidade = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Modalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbxModalidade);
+            this.groupBox1.Controls.Add(this.maskedtxtHora);
             this.groupBox1.Controls.Add(this.btnCadastrar);
-            this.groupBox1.Controls.Add(this.txtHora);
             this.groupBox1.Controls.Add(this.txtSemana);
             this.groupBox1.Controls.Add(this.txtProfessor);
-            this.groupBox1.Controls.Add(this.txtModalidade);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -63,6 +60,24 @@ namespace Estudio
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro";
             // 
+            // cbxModalidade
+            // 
+            this.cbxModalidade.FormattingEnabled = true;
+            this.cbxModalidade.Location = new System.Drawing.Point(126, 37);
+            this.cbxModalidade.Name = "cbxModalidade";
+            this.cbxModalidade.Size = new System.Drawing.Size(248, 21);
+            this.cbxModalidade.TabIndex = 10;
+            this.cbxModalidade.SelectedIndexChanged += new System.EventHandler(this.cbxModalidade_SelectedIndexChanged);
+            // 
+            // maskedtxtHora
+            // 
+            this.maskedtxtHora.Location = new System.Drawing.Point(122, 111);
+            this.maskedtxtHora.Mask = "90:00";
+            this.maskedtxtHora.Name = "maskedtxtHora";
+            this.maskedtxtHora.Size = new System.Drawing.Size(39, 20);
+            this.maskedtxtHora.TabIndex = 9;
+            this.maskedtxtHora.ValidatingType = typeof(System.DateTime);
+            // 
             // btnCadastrar
             // 
             this.btnCadastrar.Location = new System.Drawing.Point(54, 160);
@@ -72,13 +87,6 @@ namespace Estudio
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // txtHora
-            // 
-            this.txtHora.Location = new System.Drawing.Point(126, 114);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(149, 20);
-            this.txtHora.TabIndex = 7;
             // 
             // txtSemana
             // 
@@ -93,13 +101,6 @@ namespace Estudio
             this.txtProfessor.Name = "txtProfessor";
             this.txtProfessor.Size = new System.Drawing.Size(248, 20);
             this.txtProfessor.TabIndex = 5;
-            // 
-            // txtModalidade
-            // 
-            this.txtModalidade.Location = new System.Drawing.Point(126, 34);
-            this.txtModalidade.Name = "txtModalidade";
-            this.txtModalidade.Size = new System.Drawing.Size(248, 20);
-            this.txtModalidade.TabIndex = 4;
             // 
             // label4
             // 
@@ -137,35 +138,18 @@ namespace Estudio
             this.label1.TabIndex = 0;
             this.label1.Text = "Modalidade:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Modalidade});
-            this.dataGridView1.Location = new System.Drawing.Point(430, 32);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(303, 206);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // Modalidade
-            // 
-            this.Modalidade.HeaderText = "modalidade";
-            this.Modalidade.Name = "Modalidade";
-            // 
             // FormCadastrarTurma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(748, 268);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(456, 268);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormCadastrarTurma";
             this.Text = "Cadastro de Turma";
             this.Load += new System.EventHandler(this.FormCadastrarTurma_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,15 +158,13 @@ namespace Estudio
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.TextBox txtHora;
         private System.Windows.Forms.TextBox txtSemana;
         private System.Windows.Forms.TextBox txtProfessor;
-        private System.Windows.Forms.TextBox txtModalidade;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Modalidade;
+        private System.Windows.Forms.MaskedTextBox maskedtxtHora;
+        private System.Windows.Forms.ComboBox cbxModalidade;
     }
 }

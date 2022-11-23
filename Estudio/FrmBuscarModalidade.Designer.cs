@@ -137,7 +137,7 @@ namespace Estudio
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.BackColor = System.Drawing.Color.Silver;
+            this.btnAtualizar.BackColor = System.Drawing.Color.White;
             this.btnAtualizar.Location = new System.Drawing.Point(24, 195);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(345, 23);
@@ -150,7 +150,7 @@ namespace Estudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Aqua;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(435, 266);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
