@@ -11,6 +11,7 @@ namespace Estudio
     {
         private string professor, dia_semana, hora;
         private int modalidade;
+        private string text;
 
         public Turma(int modalidade)
         {
@@ -28,7 +29,10 @@ namespace Estudio
             this.dia_semana = dia_semana;
             this.hora = hora;
             this.modalidade = modalidade;
+          
         }
+
+       
 
         public string Professor { get => professor; set => professor = value; }
         public string Dia_semana { get => dia_semana; set => dia_semana = value; }
@@ -109,6 +113,39 @@ namespace Estudio
             return existe;
         }
 
-        
+        public MySqlDataReader buscaTurma1()
+        {
+            MySqlDataReader res = null;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE idModalidade=" + modalidade + "", DAO_Conexao.con);
+                res = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                DAO_Conexao.con.Close();
+            }
+            return res;
+        }
+        public MySqlDataReader buscaTurmaGeral()
+        {
+            MySqlDataReader res = null;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE id_modalidade=" + modalidade + " AND Dia_semana like '" + dia_semana + "'", DAO_Conexao.con);
+                res = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                DAO_Conexao.con.Close();
+            }
+            return res;
+        }
     }
 }

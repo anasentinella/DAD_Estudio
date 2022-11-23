@@ -31,8 +31,8 @@ namespace Estudio
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.cbxDIASemana = new System.Windows.Forms.ComboBox();
-            this.cbxHORA = new System.Windows.Forms.ComboBox();
+            this.cbxDiaSemana = new System.Windows.Forms.ComboBox();
+            this.cbxHora = new System.Windows.Forms.ComboBox();
             this.cbxModalidade = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,8 +43,8 @@ namespace Estudio
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnExcluir);
-            this.groupBox1.Controls.Add(this.cbxDIASemana);
-            this.groupBox1.Controls.Add(this.cbxHORA);
+            this.groupBox1.Controls.Add(this.cbxDiaSemana);
+            this.groupBox1.Controls.Add(this.cbxHora);
             this.groupBox1.Controls.Add(this.cbxModalidade);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -67,21 +67,22 @@ namespace Estudio
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // cbxDIASemana
+            // cbxDiaSemana
             // 
-            this.cbxDIASemana.FormattingEnabled = true;
-            this.cbxDIASemana.Location = new System.Drawing.Point(131, 70);
-            this.cbxDIASemana.Name = "cbxDIASemana";
-            this.cbxDIASemana.Size = new System.Drawing.Size(170, 21);
-            this.cbxDIASemana.TabIndex = 5;
+            this.cbxDiaSemana.FormattingEnabled = true;
+            this.cbxDiaSemana.Location = new System.Drawing.Point(131, 70);
+            this.cbxDiaSemana.Name = "cbxDiaSemana";
+            this.cbxDiaSemana.Size = new System.Drawing.Size(170, 21);
+            this.cbxDiaSemana.TabIndex = 5;
+            this.cbxDiaSemana.SelectedIndexChanged += new System.EventHandler(this.cbxDiaSemana_SelectedIndexChanged);
             // 
-            // cbxHORA
+            // cbxHora
             // 
-            this.cbxHORA.FormattingEnabled = true;
-            this.cbxHORA.Location = new System.Drawing.Point(131, 106);
-            this.cbxHORA.Name = "cbxHORA";
-            this.cbxHORA.Size = new System.Drawing.Size(170, 21);
-            this.cbxHORA.TabIndex = 4;
+            this.cbxHora.FormattingEnabled = true;
+            this.cbxHora.Location = new System.Drawing.Point(131, 106);
+            this.cbxHora.Name = "cbxHora";
+            this.cbxHora.Size = new System.Drawing.Size(170, 21);
+            this.cbxHora.TabIndex = 4;
             // 
             // cbxModalidade
             // 
@@ -90,6 +91,7 @@ namespace Estudio
             this.cbxModalidade.Name = "cbxModalidade";
             this.cbxModalidade.Size = new System.Drawing.Size(170, 21);
             this.cbxModalidade.TabIndex = 3;
+            this.cbxModalidade.SelectedIndexChanged += new System.EventHandler(this.cbxModalidade_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -137,8 +139,8 @@ namespace Estudio
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.ComboBox cbxDIASemana;
-        private System.Windows.Forms.ComboBox cbxHORA;
+        private System.Windows.Forms.ComboBox cbxDiaSemana;
+        private System.Windows.Forms.ComboBox cbxHora;
         private System.Windows.Forms.ComboBox cbxModalidade;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
